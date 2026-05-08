@@ -4,16 +4,13 @@ const cors = require("cors");
 
 const app = express();
 
-// middleware
 app.use(cors());
 app.use(express.json());
 
-// MongoDB connection (LOCAL)
-mongoose.connect("mongodb://127.0.0.1:27017/todo")
+mongoose.connect("mongodb+srv://jesnaa384:<jesna123@>@cluster0.wlenddz.mongodb.net/?appName=Cluster0")
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.log(err));
 
-// schema
 const TaskSchema = new mongoose.Schema({
   text: String,
   completed: Boolean,
@@ -21,7 +18,6 @@ const TaskSchema = new mongoose.Schema({
 
 const Task = mongoose.model("Task", TaskSchema);
 
-// routes
 app.get("/tasks", async (req, res) => {
   const tasks = await Task.find();
   res.json(tasks);
