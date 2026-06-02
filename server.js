@@ -24,7 +24,7 @@ app.use(morgan("dev"));
 app.use("/tasks", taskRoutes);
 
 // error middleware
-app.use(errorHandler);
+app.use(errorhandler);
 
 // server
 const PORT = process.env.PORT || 5000;
