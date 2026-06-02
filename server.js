@@ -7,7 +7,7 @@ const morgan = require("morgan");
 
 const connectDB = require("./config/db");
 const taskRoutes = require("./routes/taskRoutes");
-const errorHandler = require("./errorHandler");
+const errorhandler = require("./errorhandler");
 
 const app = express();
 
